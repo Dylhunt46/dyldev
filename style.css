@@ -1,5 +1,78 @@
 body {
-
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+main {
+    height: 90vh;
+}
+
+.center-form {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.text p {
+    background: grey;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+    height: 250px;
+    transform: rotateX(-90deg) translateZ(20px);
+    transition: .5s;
+    opacity: 0;
+    transform-style: preserve-3d;
+}
+
+.text p:nth-child(1) {
+    animation: animatedText 64s infinite 0s;
+}
+
+.text p:nth-child(2) {
+    animation: animatedText 64s infinite 16s;
+}
+
+.text p:nth-child(3) {
+    animation: animatedText 64s infinite 32s;
+}
+
+.text p:nth-child(4) {
+    animation: animatedText 64s infinite 48s;
+}
+
+@keyframes animatedText {
+    0% {
+        transform: rotateX(-90deg) translateZ(20px);
+        opacity: 0;
+    }
+
+    25% {
+        transform: rotateX(0deg) translateZ(0px);
+        opacity: 1;
+    }
+
+    35% {
+        transform: rotateX(-90deg) translateZ(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(-90deg) translateZ(20px);
+    }
 }
